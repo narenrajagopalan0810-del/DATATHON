@@ -187,7 +187,9 @@ class DetectorManager:
         if mode_to_use == "AI" and self.is_ai_loaded:
             try:
                 detections = self.yolo_detector.detect(image)
-                return detections, "AI"
+                if detections or force_mode == "AI":
+                    return detections, "AI"
+                logger.info("AI detector yielded 0 detections; falling back to Demo acoustic highlight detector.")
             except Exception as e:
                 logger.warning(f"AI detection failed, falling back to Demo detector: {e}")
                 

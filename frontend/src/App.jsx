@@ -142,12 +142,16 @@ export default function App() {
 
   // 6. Reset Handler
   const handleReset = () => {
-    setFile(null);
-    setPreviewUrl('');
     setAnalysisResult(null);
     setSelectedDetection(null);
-    setSelectedPreset(null);
     setErrorMessage('');
+    if (presets && presets.length > 0) {
+      handlePresetSelect(presets[0]);
+    } else {
+      setFile(null);
+      setPreviewUrl('');
+      setSelectedPreset(null);
+    }
   };
 
   // If on Landing Page, render the interactive architecture centerpiece

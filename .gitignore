@@ -33,3 +33,10 @@ backend/data/reports/*
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Large Datasets & YOLO Checkpoints
+*.zip
+*.pt
+runs/
+training/raw_data/
+training/yolo_dataset*/

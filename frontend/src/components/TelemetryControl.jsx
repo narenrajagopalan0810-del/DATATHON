@@ -72,27 +72,27 @@ export default function TelemetryControl({
         />
 
         {previewUrl ? (
-          <div className="flex items-center gap-3.5">
+          <div className="flex items-center gap-3.5 overflow-hidden">
             <img
               src={previewUrl}
               alt="Sonar Preview"
-              className="w-18 h-18 object-cover rounded-[2px] border border-white/15 bg-black"
+              className="w-20 h-20 shrink-0 object-cover rounded-[2px] border border-white/15 bg-black"
             />
 
-            <div className="flex-1 text-left">
-              <div className="flex items-center gap-1 text-emerald-400 text-[13px] font-mono font-semibold mb-1">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Sonar Record Ready</span>
+            <div className="flex-1 min-w-0 text-left">
+              <div className="flex items-center gap-1.5 text-emerald-400 text-[13px] font-mono font-semibold mb-1">
+                <CheckCircle2 className="w-4 h-4 shrink-0" />
+                <span className="truncate">Sonar Record Ready</span>
               </div>
-              <p className="text-[14px] font-mono font-bold text-slate-100 truncate max-w-[220px]">
+              <p className="text-[13.5px] font-mono font-bold text-slate-100 truncate" title={file?.name || 'MoES Transect Acoustic Record'}>
                 {file?.name || 'MoES Transect Acoustic Record'}
               </p>
-              <p className="text-[12.5px] font-mono text-slate-400">
+              <p className="text-[12px] font-mono text-slate-400 truncate">
                 {file ? `${(file.size / 1024).toFixed(1)} KB` : '800 × 500 px Side-Scan Sonar'}
               </p>
               <label
                 htmlFor="sonar-upload"
-                className="mt-1.5 inline-block text-[13px] font-mono font-semibold text-[#c98a4b] hover:underline cursor-pointer"
+                className="mt-1.5 inline-block text-[12.5px] font-mono font-semibold text-[#c98a4b] hover:underline cursor-pointer"
               >
                 Upload Different File
               </label>

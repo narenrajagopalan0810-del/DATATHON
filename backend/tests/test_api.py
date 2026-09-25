@@ -40,7 +40,8 @@ def test_analyze_and_report_pipeline():
         "heading": "90.0",
         "altitude": "15.0",
         "swath_width_m": "100.0",
-        "mission_name": "Integration-Test-Transect"
+        "mission_name": "Integration-Test-Transect",
+        "force_mode": "DEMO"
     }
 
     res = client.post("/api/analyze", files=files, data=data)

@@ -32,8 +32,8 @@ async def health_check():
 @router.get("/")
 async def root():
     return {
-        "project": "SonarSentinel — Automated Underwater Debris & Anomaly Detection",
-        "statement": "SIH26057 — Ministry of Earth Sciences (MoES)",
+        "project": "SonarSentinel - Automated Underwater Debris & Anomaly Detection",
+        "statement": "SIH26057 - Ministry of Earth Sciences (MoES)",
         "status": "OPERATIONAL",
         "api_docs": "/docs"
     }
